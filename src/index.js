@@ -11,10 +11,6 @@ const mongoose = require("mongoose")
 app.use(express.json())
 app.use(cors())
 
-app.use("/",(req,res)=>{
-    res.status(200).send("app is live")
-})
-
 app.use("/users",userRouter)
 app.use("/note",noteRoutes)
 
