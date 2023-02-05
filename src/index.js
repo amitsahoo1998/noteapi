@@ -20,9 +20,8 @@ app.use("/note",noteRoutes)
 
 const PORT = process.env.PORT || 5000
 
-const MONGO_URL = process.env.MONGO_URL
-
-mongoose.connect(MONGO_URL)
+mongoose.set("strictQuery", false);
+mongoose.connect("mongodb+srv://admin:Pramod%407104@cluster0.vlygj8n.mongodb.net/notes_db?retryWrites=true&w=majority")
 .then(()=>{
     app.listen(PORT,()=>{
         console.log("Server started on port no. "+PORT)
